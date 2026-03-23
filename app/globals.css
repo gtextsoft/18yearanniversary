@@ -1,26 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 40 33% 98%;
+  --foreground: 30 10% 12%;
+  --card: 40 30% 97%;
+  --card-foreground: 30 10% 12%;
+  --popover: 40 30% 97%;
+  --popover-foreground: 30 10% 12%;
+  --primary: 36 80% 50%;
+  --primary-foreground: 40 33% 98%;
+  --secondary: 30 20% 92%;
+  --secondary-foreground: 30 10% 20%;
+  --muted: 35 15% 93%;
+  --muted-foreground: 30 8% 46%;
+  --accent: 36 90% 55%;
+  --accent-foreground: 30 10% 12%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 35 20% 88%;
+  --input: 35 20% 88%;
+  --ring: 36 80% 50%;
+  --radius: 0.75rem;
+  --gold: 36 80% 50%;
+  --gold-light: 40 70% 70%;
+  --gold-dark: 32 85% 35%;
+  --charcoal: 30 10% 12%;
+  --warm-white: 40 33% 98%;
+  --warm-cream: 38 40% 95%;
+  --urgency: 0 72% 51%;
+  --font-display: "Playfair Display", serif;
+  --font-body: "DM Sans", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-gold: hsl(var(--gold));
+  --color-charcoal: hsl(var(--charcoal));
+  --color-warm-white: hsl(var(--warm-white));
+  --color-warm-cream: hsl(var(--warm-cream));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: hsl(var(--border));
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.text-gradient-gold {
+  background-image: linear-gradient(135deg, hsl(var(--gold)), hsl(var(--gold-light)), hsl(var(--gold)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-gold {
+  background-image: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+}
+
+.bg-gradient-dark {
+  background-image: linear-gradient(180deg, hsl(var(--charcoal)), hsl(30 10% 8%));
+}
+
+.glass {
+  backdrop-filter: blur(20px);
+  background: hsla(var(--warm-white), 0.7);
+  border: 1px solid hsla(var(--gold-light), 0.3);
+}
+
+.glass-dark {
+  backdrop-filter: blur(20px);
+  background: hsla(var(--charcoal), 0.8);
+  border: 1px solid hsla(var(--gold), 0.2);
+}
+
+.glass-light {
+  backdrop-filter: blur(16px);
+  background: hsla(var(--warm-white), 0.55);
+  border: 1px solid hsla(var(--gold-light), 0.22);
+}
+
+.shadow-gold {
+  box-shadow: 0 10px 40px -10px hsla(var(--gold), 0.35);
+}
+
+.shadow-luxury {
+  box-shadow: 0 20px 60px -15px hsla(var(--charcoal), 0.15);
+}
+
+.bg-warm-cream {
+  background-color: hsl(var(--warm-cream));
+}
+
+.text-foreground {
+  color: hsl(var(--foreground));
+}
+
+.text-muted-foreground {
+  color: hsl(var(--muted-foreground));
+}
+
+.text-primary {
+  color: hsl(var(--primary));
+}
+
+.text-gold {
+  color: hsl(var(--gold));
+}
+
+.text-warm-white {
+  color: hsl(var(--warm-white));
+}
+
+.bg-charcoal\/95 {
+  background-color: hsla(var(--charcoal), 0.95);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes pulse_glow {
+  0%,
+  100% {
+    box-shadow: 0 10px 40px -10px hsla(var(--gold), 0.35);
+  }
+  50% {
+    box-shadow: 0 12px 48px -10px hsla(var(--gold), 0.6);
+  }
+}
+
+.animate-pulse_glow {
+  animation: pulse_glow 2s ease-in-out infinite;
 }
