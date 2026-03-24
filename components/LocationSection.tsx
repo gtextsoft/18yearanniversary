@@ -91,12 +91,12 @@ const LocationSection = () => (
             ))}
           </div>
 
-          <div className="mt-4 p-4 rounded-2xl bg-charcoal text-warm-white flex items-center justify-between">
+          <div className="w-fit mt-4 flex gap-5 items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-2 h-2 rounded-full bg-gold animate-ping" />
               <p className="font-body text-sm font-medium">Site Inspections Daily</p>
             </div>
-            <a href="#contact" className="text-xs font-bold uppercase tracking-widest text-gold hover:underline">Book Now</a>
+            <a href="#contact" className="p-4 px-6 rounded-2xl bg-charcoal text-warm-white text-xs font-bold uppercase tracking-widest text-gold hover:underline">Book Now</a>
           </div>
         </motion.div>
       </div>
