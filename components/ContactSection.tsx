@@ -543,11 +543,11 @@ Additional details: ${formData.message || "N/A"}`;
               {isSubmitting ? "Submitting..." : "Submit Securely"}
             </button>
 
-            {status && (
+            {/* {status && (
               <p className="mt-3 text-sm text-warm-white/70 text-center">
                 {status}
               </p>
-            )}
+            )} */}
           </form>
         </motion.div>
       </div>
